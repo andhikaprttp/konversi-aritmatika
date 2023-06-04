@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konversi Aritmatika</title>
+</head>
+<body>
+    <h1>Konversi Aritmatika</h1>
+    
+    <label for="decimalInput">Bilangan Desimal:</label>
+    <input type="text" id="decimalInput">
+    <button onclick="calculateDecimal()">Hitung</button>
+    <br>
+    <label for="binaryInput">Bilangan Biner:</label>
+    <input type="text" id="binaryInput">
+    <button onclick="calculateBinary()">Hitung</button>
+    <br>
+    <label for="hexInput">Bilangan Hexadesimal:</label>
+    <input type="text" id="hexInput">
+    <button onclick="calculateHex()">Hitung</button>
+    <br>
+    <br>
+    <h3>Hasil:</h3>
+    <div id="result"></div>
+
+    <script>
+        function calculateDecimal() {
+            const decimalInput = document.getElementById('decimalInput').value;
+            const result = document.getElementById('result');
+            
+            // Konversi string ke bilangan desimal
+            const decimalNumber = parseFloat(decimalInput);
+            
+            // Penjumlahan dan pengurangan pada bilangan desimal
+            const sum = decimalNumber + 10;
+            const subtraction = decimalNumber - 5;
+            
+            result.innerHTML = `Penjumlahan: ${sum}<br>Pengurangan: ${subtraction}`;
+        }
+        
+        function calculateBinary() {
+            const binaryInput = document.getElementById('binaryInput').value;
+            const result = document.getElementById('result');
+            
+            // Konversi string biner ke bilangan desimal
+            const decimalNumber = parseInt(binaryInput, 2);
+            
+            // Penjumlahan dan pengurangan pada bilangan desimal
+            const sum = decimalNumber + 10;
+            const subtraction = decimalNumber - 5;
+            
+            // Konversi hasil ke biner
+            const sumBinary = sum.toString(2);
+            const subtractionBinary = subtraction.toString(2);
+            
+            result.innerHTML = `Penjumlahan: ${sumBinary}<br>Pengurangan: ${subtractionBinary}`;
+        }
+        
+        function calculateHex() {
+            const hexInput = document.getElementById('hexInput').value;
+            const result = document.getElementById('result');
+            
+            // Konversi string hexadesimal ke bilangan desimal
+            const decimalNumber = parseInt(hexInput, 16);
+            
+            // Penjumlahan dan pengurangan pada bilangan desimal
+            const sum = decimalNumber + 10;
+            const subtraction = decimalNumber - 5;
+            
+            // Konversi hasil ke hexadesimal
+            const sumHex = sum.toString(16);
+            const subtractionHex = subtraction.toString(16);
+            
+            result.innerHTML = `Penjumlahan: ${sumHex}<br>Pengurangan: ${subtractionHex}`;
+        }
+    </script>
+</body>
+</html>
